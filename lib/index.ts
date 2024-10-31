@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from "axios";
 import SectorService from "./services/sector.service";
 
 class FonCore {
-  axiosInstance: AxiosInstance;
+  private axiosInstance: AxiosInstance;
   // Services
   Sector: SectorService;
 

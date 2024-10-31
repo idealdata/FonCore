@@ -1,7 +1,6 @@
-import { AxiosInstance } from "axios";
 import SectorService from "./services/sector.service";
 declare class FonCore {
-    axiosInstance: AxiosInstance;
+    private axiosInstance;
     Sector: SectorService;
     constructor({ url, token }: {
         url: string;

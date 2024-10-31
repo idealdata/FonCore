@@ -3,8 +3,5 @@ declare const _default: {
         url: string;
         token: string;
     }) => void;
-    Sector: {
-        findAll: () => Promise<FCResponse<FCSectorItem[]>>;
-    };
 };
 export default _default;

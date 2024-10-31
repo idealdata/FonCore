@@ -1,6 +1,3 @@
-import { setConfig, getAxiosInstance } from "./config";
-
-export default {
-  setConfig,
-  getAxiosInstance,
-};
+export function HelloWorld(name: string = "World"): string {
+  return `Hello, ${name}!`;
+}

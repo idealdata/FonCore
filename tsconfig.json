@@ -1,14 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
-    "lib": ["ES6", "DOM"],
+    "target": "es6",
+    "module": "CommonJS",
+    "declaration": true,
     "strict": true,
     "outDir": "./dist",
     "rootDir": "./lib",
-    "declaration": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
     "strictPropertyInitialization": false,
     "experimentalDecorators": true
   },

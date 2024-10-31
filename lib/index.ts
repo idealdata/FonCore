@@ -1,5 +1,6 @@
-import { setConfig } from "./config";
+import { setConfig, getAxiosInstance } from "./config";
 
 export default {
   setConfig,
+  getAxiosInstance,
 };

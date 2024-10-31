@@ -7,14 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import Service from ".";
-class SectorService extends Service {
-    findAll() {
-        return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            let res = yield ((_a = this.axios) === null || _a === void 0 ? void 0 : _a.get("/Sector/SectorList", {}).catch((error) => error.response));
-            return res === null || res === void 0 ? void 0 : res.data;
-        });
-    }
+import Config from "../config";
+function findAll() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var _a;
+        let res = yield ((_a = Config.axios) === null || _a === void 0 ? void 0 : _a.get("/Sector/SectorList", {}).catch((error) => error.response));
+        return res === null || res === void 0 ? void 0 : res.data;
+    });
 }
-export default SectorService;
+export default { findAll };

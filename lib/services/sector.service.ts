@@ -1,11 +1,9 @@
-import Service from ".";
+import Config from "../config";
 
-class SectorService extends Service {
-  async findAll(): Promise<FCResponse<FCSectorItem[]>> {
-    let res = await this.axios
-      ?.get("/Sector/SectorList", {})
-      .catch((error: FCError) => error.response);
-    return res?.data;
-  }
+async function findAll(): Promise<FCResponse<FCSectorItem[]>> {
+  let res = await Config.axios
+    ?.get("/Sector/SectorList", {})
+    .catch((error: FCError) => error.response);
+  return res?.data;
 }
-export default SectorService;
+export default { findAll };

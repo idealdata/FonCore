@@ -32,39 +32,22 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
-class Service {
-    constructor(axios) {
-        this.axios = axios;
-    }
-}
+const Config = {
+    axios,
+    url: "",
+    token: "",
+};
 
-class SectorService extends Service {
-    findAll() {
-        return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            let res = yield ((_a = this.axios) === null || _a === void 0 ? void 0 : _a.get("/Sector/SectorList", {}).catch((error) => error.response));
-            return res === null || res === void 0 ? void 0 : res.data;
-        });
-    }
+function findAll() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var _a;
+        let res = yield ((_a = Config.axios) === null || _a === void 0 ? void 0 : _a.get("/Sector/SectorList", {}).catch((error) => error.response));
+        return res === null || res === void 0 ? void 0 : res.data;
+    });
 }
+var SectorService = { findAll };
 
-class FonCore {
-    constructor({ url, token }) {
-        this.Configration(url, token);
-        this.Services();
-    }
-    Configration(url, token) {
-        this.axiosInstance = axios.create({
-            baseURL: url,
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-                Authorization: `Bearer ${token}`,
-            },
-        });
-    }
-    Services() {
-        this.Sector = new SectorService(this.axiosInstance);
-    }
-}
+// Services
+var index = { Sector: SectorService };
 
-export { FonCore as default };
+export { index as default };

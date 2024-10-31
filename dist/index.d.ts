@@ -3,5 +3,6 @@ declare const _default: {
         url: string;
         token: string;
     }) => void;
+    getAxiosInstance: () => import("axios").AxiosInstance;
 };
 export default _default;

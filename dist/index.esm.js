@@ -1,6 +1,4 @@
-'use strict';
-
-var axios = require('axios');
+import axios from 'axios';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -69,4 +67,4 @@ class FonCore {
     }
 }
 
-module.exports = FonCore;
+export { FonCore as default };

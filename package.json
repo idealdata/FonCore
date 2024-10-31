@@ -1,11 +1,12 @@
 {
   "name": "foncore",
   "version": "1.0.0",
+  "type": "module",
   "main": "lib/index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsc && rollup -c",
     "prepare": "npm run build"
   },
   "keywords": [],
@@ -16,6 +17,9 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "react": "^18.3.1"
+    "axios": "^1.7.7",
+    "react": "^18.3.1",
+    "rollup": "^4.24.3",
+    "rollup-plugin-typescript2": "^0.36.0"
   }
 }

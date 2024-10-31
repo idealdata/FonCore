@@ -1,11 +1,11 @@
-import axios, { AxiosInstance } from "axios";
+import ax, { AxiosInstance } from "axios";
 
 const Config: {
   axios: AxiosInstance;
   url: string;
   token: string;
 } = {
-  axios,
+  axios: ax,
   url: "",
   token: "",
 };
@@ -13,7 +13,7 @@ const Config: {
 export const setConfig = ({ url, token }: { url: string; token: string }) => {
   Config.url = url;
   Config.token = token;
-  Config.axios = axios.create({
+  Config.axios = ax.create({
     baseURL: url,
     headers: {
       "Content-Type": "application/json; charset=UTF-8",

@@ -1,14 +1,14 @@
-import axios from 'axios';
+import ax from 'axios';
 
 const Config = {
-    axios,
+    axios: ax,
     url: "",
     token: "",
 };
 const setConfig = ({ url, token }) => {
     Config.url = url;
     Config.token = token;
-    Config.axios = axios.create({
+    Config.axios = ax.create({
         baseURL: url,
         headers: {
             "Content-Type": "application/json; charset=UTF-8",

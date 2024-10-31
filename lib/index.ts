@@ -5,7 +5,7 @@ import SectorService from "./services/sector.service";
 class FonCore {
   private axiosInstance: AxiosInstance;
   // Services
-  Sector: SectorService;
+  public Sector!: SectorService;
 
   constructor({ url, token }: { url: string; token: string }) {
     this.Configration(url, token);

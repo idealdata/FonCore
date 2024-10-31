@@ -2,6 +2,23 @@
 
 var axios = require('axios');
 
+const Config = {
+    axios,
+    url: "",
+    token: "",
+};
+const setConfig = ({ url, token }) => {
+    Config.url = url;
+    Config.token = token;
+    Config.axios = axios.create({
+        baseURL: url,
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            Authorization: `Bearer ${token}`,
+        },
+    });
+};
+
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -34,12 +51,6 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
-const Config = {
-    axios,
-    url: "",
-    token: "",
-};
-
 function findAll() {
     return __awaiter(this, void 0, void 0, function* () {
         var _a;
@@ -49,7 +60,10 @@ function findAll() {
 }
 var SectorService = { findAll };
 
-// Services
-var index = { Sector: SectorService };
+var index = {
+    setConfig,
+    // Services
+    Sector: SectorService,
+};
 
 module.exports = index;

@@ -1,21 +1,13 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
+    "module": "CommonJS",
     "declaration": true,
     "strict": true,
     "outDir": "./dist",
     "rootDir": "./lib",
     "strictPropertyInitialization": false,
-    "experimentalDecorators": true,
-    "moduleResolution": "node"
+    "experimentalDecorators": true
   },
-  "include": [
-    "lib/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.js"
-  ]
+  "include": ["lib/**/*"]
 }

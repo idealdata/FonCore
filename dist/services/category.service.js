@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,13 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import axios from "../networking";
+Object.defineProperty(exports, "__esModule", { value: true });
+const networking_1 = require("../networking");
 class CategoryService {
     constructor() {
     }
     findAll() {
         return __awaiter(this, void 0, void 0, function* () {
-            let res = yield axios
+            let res = yield networking_1.default
                 .get("/Kategori/KategoriList", {})
                 .catch((error) => error.response);
             return res === null || res === void 0 ? void 0 : res.data;
@@ -21,11 +23,11 @@ class CategoryService {
     }
     findAllSemsiyeList() {
         return __awaiter(this, void 0, void 0, function* () {
-            let res = yield axios
+            let res = yield networking_1.default
                 .get("/Kategori/SemsiyeList", {})
                 .catch((error) => error.response);
             return res === null || res === void 0 ? void 0 : res.data;
         });
     }
 }
-export default CategoryService;
+exports.default = CategoryService;

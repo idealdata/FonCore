@@ -1,6 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // src/services/UserService.ts
-import { ApiService } from '../ApiService';
-class HelloService extends ApiService {
+const ApiService_1 = require("../ApiService");
+class HelloService extends ApiService_1.ApiService {
     constructor(apiUrl, token) {
         super(apiUrl, token);
     }
@@ -8,4 +10,4 @@ class HelloService extends ApiService {
         return "hello";
     }
 }
-export default HelloService;
+exports.default = HelloService;

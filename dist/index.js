@@ -1,10 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // src/FonService.ts
-import HelloService from './services/hello.service';
+const hello_service_1 = require("./services/hello.service");
 class FonCore {
     static initialize(apiUrl, token) {
         this.apiUrl = apiUrl;
         this.token = token;
-        this.Hello = new HelloService(apiUrl, token);
+        this.Hello = new hello_service_1.default(apiUrl, token);
     }
 }
-export default FonCore;
+exports.default = FonCore;

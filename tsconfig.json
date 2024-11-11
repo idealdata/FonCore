@@ -1,13 +1,21 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "CommonJS",
+    "module": "ESNext",
     "declaration": true,
     "strict": true,
     "outDir": "./dist",
     "rootDir": "./lib",
     "strictPropertyInitialization": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "moduleResolution": "node"
   },
-  "include": ["lib/**/*"]
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.js"
+  ]
 }

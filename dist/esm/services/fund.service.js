@@ -22,7 +22,7 @@ class FundService {
             if (!this.instance) {
                 throw new Error('FundService is not configured. Call configure() first.');
             }
-            const response = yield this.instance.get('/funds');
+            const response = yield this.instance.get('/Fon/FonList');
             return response.data;
         });
     }

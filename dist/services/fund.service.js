@@ -26,5 +26,14 @@ class FundService {
             return response.data;
         });
     }
+    static getFunds2() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (!this.instance) {
+                throw new Error('FundService is not configured. Call configure() first.');
+            }
+            const response = yield this.instance.get('/Fon/FonList');
+            return response.data;
+        });
+    }
 }
 export default FundService;

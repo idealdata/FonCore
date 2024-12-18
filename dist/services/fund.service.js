@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import axios from 'axios';
+import axios from "axios";
 class FundService {
     static configure({ apiUrl, token }) {
         this.instance = axios.create({
@@ -22,14 +22,8 @@ class FundService {
             if (!this.instance) {
                 throw new Error('FundService is not configured. Call configure() first.');
             }
-            try {
-                const response = yield this.instance.get('/funds');
-                return response.data;
-            }
-            catch (error) {
-                console.error('Error fetching funds:', error.message);
-                throw error;
-            }
+            const response = yield this.instance.get('/funds');
+            return response.data;
         });
     }
 }

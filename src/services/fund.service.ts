@@ -1,20 +1,9 @@
-import axios, { AxiosInstance } from 'axios';
-
-interface FundServiceConfig {
-  apiUrl: string;
-  token: string;
-}
-
-interface Fund {
-  id: string;
-  name: string;
-  value: number;
-}
+import axios, { AxiosInstance } from "axios";
 
 class FundService {
   private static instance: AxiosInstance;
 
-  static configure({ apiUrl, token }: FundServiceConfig): void {
+  static configure({ apiUrl, token }: { apiUrl: string; token: string }): void {
     this.instance = axios.create({
       baseURL: apiUrl,
       headers: {
@@ -23,18 +12,13 @@ class FundService {
     });
   }
 
-  static async getFunds(): Promise<Fund[]> {
+  static async getFunds(): Promise<any> {
     if (!this.instance) {
       throw new Error('FundService is not configured. Call configure() first.');
     }
 
-    try {
-      const response = await this.instance.get<Fund[]>('/funds');
-      return response.data;
-    } catch (error: any) {
-      console.error('Error fetching funds:', error.message);
-      throw error;
-    }
+    const response = await this.instance.get('/funds');
+    return response.data;
   }
 }
 

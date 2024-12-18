@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "CommonJS",
-    "declaration": true,
+    "module": "ES6",
     "outDir": "dist",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "declaration": true
   },
-  "include": ["lib/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"]
 }

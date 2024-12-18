@@ -7,3 +7,4 @@ declare class FundService {
     static getFunds(): Promise<any>;
 }
 export default FundService;
+//# sourceMappingURL=fund.service.d.ts.map

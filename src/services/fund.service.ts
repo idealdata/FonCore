@@ -17,7 +17,7 @@ class FundService {
       throw new Error('FundService is not configured. Call configure() first.');
     }
 
-    const response = await this.instance.get('/funds');
+    const response = await this.instance.get('/Fon/FonList');
     return response.data;
   }
 }

@@ -1,4 +1,4 @@
-import { BaseService } from './base.service';
+import { BaseService } from "./base.service";
 
 export class FundService extends BaseService {
   constructor(baseURL: string, token?: string) {
@@ -6,10 +6,6 @@ export class FundService extends BaseService {
   }
 
   getFunds() {
-    return this.get(`/funds`);
-  }
-
-  getFundById(fundId: string) {
-    return this.get(`/funds/${fundId}`);
+    return this.get(`/Fon/FonList`);
   }
 }

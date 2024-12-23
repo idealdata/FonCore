@@ -1,2 +1,2 @@
-export { default as FundService } from './services/fund.service';
+export { FundService } from './service/fund.service';
 //# sourceMappingURL=index.d.ts.map

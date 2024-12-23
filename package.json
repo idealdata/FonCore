@@ -5,7 +5,7 @@
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && tsc --module ES6 --outDir dist/esm"
+    "build": "tsc"
   },
   "files": [
     "dist"
@@ -20,6 +20,6 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "axios": "^1.7.7"
+    "axios": "^1.7.9"
   }
 }

@@ -5,7 +5,7 @@
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && tsc --module ES6 --outDir dist/esm"
   },
   "files": [
     "dist"
